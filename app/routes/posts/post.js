@@ -2,6 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(params) {
+    if (!params.post_id) {
+      params.post_id = params.post_slug.match(/[^-]*/)[0];
+    }
     return this.store.peekRecord('post', params.post_id);
   },
 
