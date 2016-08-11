@@ -1,0 +1,9 @@
+<div class="">
+  <h1>Posts</h1>
+  <ul>
+    {{#each model as |post|}}
+      <li>{{#link-to "posts.post" post}}{{post.title}}{{/link-to}} <em>Slug: {{post.slug}}</em></li>
+    {{/each}}
+  </ul>
+</div>
+{{outlet}}
